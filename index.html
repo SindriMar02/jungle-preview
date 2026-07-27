@@ -1,0 +1,733 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Jungle Cocktail Bar · Austurstræti 9, Reykjavík</title>
+<meta name="description" content="A cocktail bar on the second floor of Austurstræti 9 in downtown Reykjavík. Signature drinks, seasonal drinks and a full zero percent list, poured nightly from 16:00. Listed on World's 50 Best Discovery." />
+<meta name="robots" content="noindex" />
+<meta name="theme-color" content="#050906" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Jungle Cocktail Bar · Austurstræti 9, Reykjavík" />
+<meta property="og:description" content="Come get lost in the jungle in the heart of downtown Reykjavík. Signature and seasonal cocktails, a full zero percent list, and happy hour every day." />
+<meta property="og:image" content="assets/img/bar.webp" />
+<meta property="og:locale" content="en_GB" />
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="assets/favicon-48.png" type="image/png" sizes="48x48" />
+<link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="preload" href="assets/fonts/Technor-Black.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="assets/fonts/Switzer-Regular.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" as="image" href="assets/stir-wide-poster.webp" />
+<link rel="stylesheet" href="styles.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BarOrPub",
+  "name": "Jungle Cocktail Bar",
+  "url": "https://jungle.is",
+  "email": "jungle@jungle.is",
+  "telephone": "+354 792 6969",
+  "servesCuisine": "Cocktails",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Austurstræti 9, second floor",
+    "postalCode": "101",
+    "addressLocality": "Reykjavík",
+    "addressCountry": "IS"
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Sunday"], "opens": "16:00", "closes": "01:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "16:00", "closes": "02:00" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ══════════ opening scene ══════════
+     The viewport is an empty glass. Liquid rises behind their wordmark on a
+     live wobbling surface, the count runs to 100, then the whole level
+     drains away through an arch and the bar is behind it. -->
+<div class="gate" id="gate">
+  <svg class="gate__liquid" id="gateLiquid" viewBox="0 0 1200 1000" preserveAspectRatio="none" aria-hidden="true">
+    <path id="gateWave" fill="#9A7A57" d="M0,1000 L0,1000 Q300,1000 600,1000 T1200,1000 L1200,1000 Z"/>
+  </svg>
+  <div class="gate__inner">
+    <img class="gate__logo" src="assets/img/logo-white.webp" alt="Jungle Cocktail Bar" width="1600" height="427" />
+    <p class="gate__line mono" id="gateLine">POURING</p>
+  </div>
+  <p class="gate__count mono" id="gateCount">00</p>
+  <button class="gate__skip mono" id="gateSkip" type="button">Skip</button>
+</div>
+
+<!-- ══════════ header ══════════ -->
+<header class="hdr" id="hdr">
+  <p class="hdr__side hdr__side--l mono">AUSTURSTRÆTI 9 &middot; 2<sup>ND</sup> FLOOR</p>
+
+  <a class="hdr__mark" href="#top" aria-label="Jungle Cocktail Bar, back to top">
+    <img src="assets/img/logo-white.webp" alt="Jungle" width="1600" height="427" />
+  </a>
+
+  <div class="hdr__side hdr__side--r">
+    <p class="mono hdr__open">OPEN TONIGHT 16:00</p>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
+      <span class="burger__box" aria-hidden="true"><i></i><i></i></span>
+      <span class="burger__word mono" aria-hidden="true">MENU</span>
+    </button>
+  </div>
+</header>
+
+<!-- overlay is a SIBLING of the header, never a child (a filtered header becomes the containing block) -->
+<div class="menu" id="menu" hidden>
+  <div class="menu__inner">
+    <nav class="menu__nav" aria-label="Site">
+      <a href="#drinks"><span><i class="mono" aria-hidden="true">01</i>Drinks</span></a>
+      <a href="#crew"><span><i class="mono" aria-hidden="true">02</i>The crew</span></a>
+      <a href="#archive"><span><i class="mono" aria-hidden="true">03</i>Archive</span></a>
+      <a href="#room"><span><i class="mono" aria-hidden="true">04</i>The room</span></a>
+      <a href="#workshop"><span><i class="mono" aria-hidden="true">05</i>Workshop</span></a>
+      <a href="#rent"><span><i class="mono" aria-hidden="true">06</i>Rent the space</span></a>
+      <a href="#visit"><span><i class="mono" aria-hidden="true">07</i>Visit</span></a>
+    </nav>
+    <div class="menu__foot">
+      <p class="mono">AUSTURSTRÆTI 9 · SECOND FLOOR · 101 REYKJAVÍK</p>
+      <a class="btn btn--main" href="mailto:jungle@jungle.is">jungle@jungle.is</a>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- ══════════ 1. hero ══════════ -->
+<div class="heropin" id="heropin">
+<section class="hero" id="top">
+  <video
+    class="hero__film" id="stirVid"
+    poster="assets/stir-wide-poster.webp"
+    muted loop playsinline preload="auto"
+    aria-hidden="true" tabindex="-1"></video>
+
+  <div class="hero__scrim" aria-hidden="true"></div>
+  <div class="hero__veil" aria-hidden="true"></div>
+
+  <div class="hero__content">
+    <p class="hero__eyebrow mono">COCKTAIL BAR &middot; DOWNTOWN REYKJAVÍK &middot; ONE FLOOR UP</p>
+
+    <h1 class="hero__h1">
+      <span class="hero__line hero__line--a" id="lineA"><span class="hero__mask"><span class="hero__inner">Something is being</span></span></span>
+      <span class="hero__gap" aria-hidden="true"></span>
+      <span class="hero__line hero__line--b" id="lineB"><span class="hero__mask"><span class="hero__inner">stirred upstairs</span></span></span>
+    </h1>
+
+    <div class="hero__base" id="heroBase">
+      <p class="hero__blurb">Come get lost in the jungle in the heart of downtown Reykjavík. Highballs, craft cocktails, beer on tap, wine, bubbles and bar snacks.</p>
+      <div class="hero__acts">
+        <a class="btn btn--main" href="#drinks">See the drinks</a>
+        <a class="btn btn--ghost" href="#visit">Find us</a>
+      </div>
+    </div>
+
+    <p class="hero__scroll mono" id="heroHint" aria-hidden="true">SCROLL TO STIR</p>
+  </div>
+</section>
+</div>
+
+<!-- ══════════ 2. ticker ══════════ -->
+<section class="ticker" aria-hidden="true">
+  <div class="ticker__skew" id="tickSkew"><div class="ticker__track" id="tickTrack"></div></div>
+</section>
+
+<!-- ══════════ 3. thesis ══════════ -->
+<section class="thesis" id="about">
+  <div class="thesis__grid">
+    <div class="thesis__text">
+      <p class="kicker mono">01 / WHAT THIS PLACE IS</p>
+      <h2 class="h2">A bar that keeps<br /><em>conjuring drinks</em></h2>
+      <p class="lead">Jungle is where the bartenders try the ideas nobody else in Reykjavík is trying yet. The list moves. Something new is always halfway invented behind the bar.</p>
+      <blockquote class="quote">
+        <p>&bdquo;Jungle staðurinn til að smakka nýjar og framandi kokteilhugmyndir sem barþjónarnir þar eru stanslaust að galdra fram.&ldquo;</p>
+        <footer>
+          <span class="quote__who">Jakob Eggertsson, co&#8209;owner</span>
+          <span class="quote__src mono">MBL.IS &middot; 5 SEPT 2024</span>
+        </footer>
+      </blockquote>
+      <p class="thesis__gloss">Roughly: <em>Jungle is the place to taste new and unfamiliar cocktail ideas, the ones the bartenders there are constantly conjuring up.</em></p>
+    </div>
+
+    <ul class="facts">
+      <li><span class="facts__n">50</span><span class="facts__l">Listed on World&rsquo;s 50 Best Discovery, the guide&rsquo;s directory of bars worth knowing. Not a ranking</span></li>
+      <li><span class="facts__n">16</span><span class="facts__l">Drinks on the current list, four of them at zero percent</span></li>
+      <li><span class="facts__n">3</span><span class="facts__l">Bars run by the same crew: Jungle, Bingó Drinkery and Daisy</span></li>
+      <li><span class="facts__n">2<sup>nd</sup></span><span class="facts__l">Floor, above Austurstræti. You have to know it is there</span></li>
+    </ul>
+  </div>
+
+  <figure class="bleed bleed--tall" data-pour>
+    <img src="assets/img/bar.webp" alt="The bar at Jungle, lit low, with hanging greenery over the counter and bottles on the back shelves." width="1900" height="950" loading="lazy" decoding="async" />
+    <figcaption class="mono">THE BAR &middot; AUSTURSTRÆTI 9</figcaption>
+  </figure>
+</section>
+
+<!-- ══════════ 4. drinks — every drink builds its own glass ══════════ -->
+<section class="drinks paper" id="drinks">
+  <header class="sec-head">
+    <p class="kicker mono">02 / THE LIST</p>
+    <h2 class="h2">Every drink,<br />built in front of you</h2>
+    <p class="sec-head__note">Their menu is published as a photograph of a printed sheet. Here is the whole list as text, and every drink pours itself into the glass it is actually served in, one band per ingredient.</p>
+  </header>
+
+  <div class="sheet">
+      <section class="course" aria-labelledby="course-sig">
+        <header class="course__head">
+          <h3 class="course__title" id="course-sig">Signatures</h3>
+          <p class="course__price mono">3.400 kr.</p>
+        </header>
+        <ul class="course__list">
+          <li class="dish">
+            <div class="dish__glass" aria-hidden="true">
+              <svg viewBox="0 0 100 130" class="gl" data-fill>
+                <defs><clipPath id="cp-sig-0"><path d="M14 34 Q14 78 46 84 L46 112 L30 118 L30 124 L70 124 L70 118 L54 112 L54 84 Q86 78 86 34 Z"/></clipPath></defs>
+                <g clip-path="url(#cp-sig-0)">
+                  <rect class="gl__band" data-band="0" x="0" y="82.5" width="100" height="24.1" fill="#C9CFA8"/>
+                  <rect class="gl__band" data-band="1" x="0" y="59.0" width="100" height="24.1" fill="#C3D468"/>
+                  <rect class="gl__band" data-band="2" x="0" y="35.5" width="100" height="24.1" fill="#A8C23A"/>
+                  <rect class="gl__band" data-band="3" x="0" y="12.0" width="100" height="24.1" fill="#E3D28A"/>
+                </g>
+                <path class="gl__out" d="M14 34 Q14 78 46 84 L46 112 L30 118 L30 124 L70 124 L70 118 L54 112 L54 84 Q86 78 86 34 Z"/>
+              </svg>
+            </div>
+            <div class="dish__body">
+              <p class="dish__top"><span class="dish__n mono">01</span><span class="dish__name">Chamomile-High Club</span><span class="dish__rule" aria-hidden="true"></span><span class="dish__p mono">3.400</span></p>
+              <p class="dish__note">Gimlet style, floral, fresh</p>
+              <ul class="dish__spec"><li data-ing="0"><i style="--c:#C9CFA8" aria-hidden="true"></i>Beefeater Gin</li><li data-ing="1"><i style="--c:#C3D468" aria-hidden="true"></i>Lemongrass</li><li data-ing="2"><i style="--c:#A8C23A" aria-hidden="true"></i>Lime</li><li data-ing="3"><i style="--c:#E3D28A" aria-hidden="true"></i>Chamomile</li></ul>
+            </div>
+          </li>
+          <li class="dish">
+            <div class="dish__glass" aria-hidden="true">
+              <svg viewBox="0 0 100 130" class="gl" data-fill>
+                <defs><clipPath id="cp-sig-1"><path d="M18 30 L23 118 Q23 124 30 124 L70 124 Q77 124 77 118 L82 30 Z"/></clipPath></defs>
+                <g clip-path="url(#cp-sig-1)">
+                  <rect class="gl__band" data-band="0" x="0" y="87.2" width="100" height="19.4" fill="#EFE6D6"/>
+                  <rect class="gl__band" data-band="1" x="0" y="68.4" width="100" height="19.4" fill="#D8737A"/>
+                  <rect class="gl__band" data-band="2" x="0" y="49.6" width="100" height="19.4" fill="#DE9147"/>
+                  <rect class="gl__band" data-band="3" x="0" y="30.8" width="100" height="19.4" fill="#C99A4E"/>
+                  <rect class="gl__band" data-band="4" x="0" y="12.0" width="100" height="19.4" fill="#D9C4A0"/>
+                </g>
+                <path class="gl__out" d="M18 30 L23 118 Q23 124 30 124 L70 124 Q77 124 77 118 L82 30 Z"/>
+              </svg>
+            </div>
+            <div class="dish__body">
+              <p class="dish__top"><span class="dish__n mono">02</span><span class="dish__name">Cereal Killer</span><span class="dish__rule" aria-hidden="true"></span><span class="dish__p mono">3.400</span></p>
+              <p class="dish__note">Creamy, corn flake-y and fruity</p>
+              <ul class="dish__spec"><li data-ing="0"><i style="--c:#EFE6D6" aria-hidden="true"></i>Bacardi Carta Blanca</li><li data-ing="1"><i style="--c:#D8737A" aria-hidden="true"></i>Strawberries</li><li data-ing="2"><i style="--c:#DE9147" aria-hidden="true"></i>Orange</li><li data-ing="3"><i style="--c:#C99A4E" aria-hidden="true"></i>Corn Flakes</li><li data-ing="4"><i style="--c:#D9C4A0" aria-hidden="true"></i>Almonds</li></ul>
+            </div>
+          </li>
+          <li class="dish">
+            <div class="dish__glass" aria-hidden="true">
+              <svg viewBox="0 0 100 130" class="gl" data-fill>
+                <defs><clipPath id="cp-sig-2"><path d="M30 14 L33 118 Q33 124 39 124 L61 124 Q67 124 67 118 L70 14 Z"/></clipPath></defs>
+                <g clip-path="url(#cp-sig-2)">
+                  <rect class="gl__band" data-band="0" x="0" y="82.5" width="100" height="24.1" fill="#C08A4E"/>
+                  <rect class="gl__band" data-band="1" x="0" y="59.0" width="100" height="24.1" fill="#7FA43C"/>
+                  <rect class="gl__band" data-band="2" x="0" y="35.5" width="100" height="24.1" fill="#E4DFB2"/>
+                  <rect class="gl__band" data-band="3" x="0" y="12.0" width="100" height="24.1" fill="#D9DED2"/>
+                </g>
+                <path class="gl__out" d="M30 14 L33 118 Q33 124 39 124 L61 124 Q67 124 67 118 L70 14 Z"/>
+              </svg>
+            </div>
+            <div class="dish__body">
+              <p class="dish__top"><span class="dish__n mono">03</span><span class="dish__name">Rumaway</span><span class="dish__rule" aria-hidden="true"></span><span class="dish__p mono">3.400</span></p>
+              <p class="dish__note">Longdrink, floral, slightly bitter and refreshing</p>
+              <ul class="dish__spec"><li data-ing="0"><i style="--c:#C08A4E" aria-hidden="true"></i>Takamaka Rum</li><li data-ing="1"><i style="--c:#7FA43C" aria-hidden="true"></i>Limeleaf</li><li data-ing="2"><i style="--c:#E4DFB2" aria-hidden="true"></i>Elderflower</li><li data-ing="3"><i style="--c:#D9DED2" aria-hidden="true"></i>Tonic</li></ul>
+            </div>
+          </li>
+          <li class="dish">
+            <div class="dish__glass" aria-hidden="true">
+              <svg viewBox="0 0 100 130" class="gl" data-fill>
+                <defs><clipPath id="cp-sig-3"><path d="M18 30 L23 118 Q23 124 30 124 L70 124 Q77 124 77 118 L82 30 Z"/></clipPath></defs>
+                <g clip-path="url(#cp-sig-3)">
+                  <rect class="gl__band" data-band="0" x="0" y="82.5" width="100" height="24.1" fill="#E6E2CE"/>
+                  <rect class="gl__band" data-band="1" x="0" y="59.0" width="100" height="24.1" fill="#D9BE3C"/>
+                  <rect class="gl__band" data-band="2" x="0" y="35.5" width="100" height="24.1" fill="#C6552E"/>
+                  <rect class="gl__band" data-band="3" x="0" y="12.0" width="100" height="24.1" fill="#E09A3E"/>
+                </g>
+                <path class="gl__out" d="M18 30 L23 118 Q23 124 30 124 L70 124 Q77 124 77 118 L82 30 Z"/>
+              </svg>
+            </div>
+            <div class="dish__body">
+              <p class="dish__top"><span class="dish__n mono">04</span><span class="dish__name">Pepe</span><span class="dish__rule" aria-hidden="true"></span><span class="dish__p mono">3.400</span></p>
+              <p class="dish__note">Refreshing, fresh and savoury</p>
+              <ul class="dish__spec"><li data-ing="0"><i style="--c:#E6E2CE" aria-hidden="true"></i>Pisco</li><li data-ing="1"><i style="--c:#D9BE3C" aria-hidden="true"></i>Yellow bell pepper</li><li data-ing="2"><i style="--c:#C6552E" aria-hidden="true"></i>Chilli</li><li data-ing="3"><i style="--c:#E09A3E" aria-hidden="true"></i>Acidified orange juice</li></ul>
+            </div>
+          </li>
+          <li class="dish">
+            <div class="dish__glass" aria-hidden="true">
+              <svg viewBox="0 0 100 130" class="gl" data-fill>
+                <defs><clipPath id="cp-sig-4"><path d="M18 30 L23 118 Q23 124 30 124 L70 124 Q77 124 77 118 L82 30 Z"/></clipPath></defs>
+                <g clip-path="url(#cp-sig-4)">
+                  <rect class="gl__band" data-band="0" x="0" y="74.7" width="100" height="31.9" fill="#DDE3D0"/>
+                  <rect class="gl__band" data-band="1" x="0" y="43.3" width="100" height="31.9" fill="#D5A81B"/>
+                  <rect class="gl__band" data-band="2" x="0" y="12.0" width="100" height="31.9" fill="#C8C438"/>
+                </g>
+                <path class="gl__out" d="M18 30 L23 118 Q23 124 30 124 L70 124 Q77 124 77 118 L82 30 Z"/>
+              </svg>
+            </div>
+            <div class="dish__body">
+              <p class="dish__top"><span class="dish__n mono">05</span><span class="dish__name">Black &amp; Yellow</span><span class="dish__rule" aria-hidden="true"></span><span class="dish__p mono">3.400</span></p>
+              <p class="dish__note">Herbal, aromatic and funky</p>
+              <ul class="dish__spec"><li data-ing="0"><i style="--c:#DDE3D0" aria-hidden="true"></i>Brennivín</li><li data-ing="1"><i style="--c:#D5A81B" aria-hidden="true"></i>Turmeric</li><li data-ing="2"><i style="--c:#C8C438" aria-hidden="true"></i>Strega Aperitif</li></ul>
+            </div>
+          </li>
+          <li class="dish">
+            <div class="dish__glass" aria-hidden="true">
+              <svg viewBox="0 0 100 130" class="gl" data-fill>
+                <defs><clipPath id="cp-sig-5"><path d="M12 30 L46 82 L46 112 L30 118 L30 124 L70 124 L70 118 L54 112 L54 82 L88 30 Z"/></clipPath></defs>
+                <g clip-path="url(#cp-sig-5)">
+                  <rect class="gl__band" data-band="0" x="0" y="82.5" width="100" height="24.1" fill="#A97038"/>
+                  <rect class="gl__band" data-band="1" x="0" y="59.0" width="100" height="24.1" fill="#8C5B2E"/>
+                  <rect class="gl__band" data-band="2" x="0" y="35.5" width="100" height="24.1" fill="#4A2E1D"/>
+                  <rect class="gl__band" data-band="3" x="0" y="12.0" width="100" height="24.1" fill="#DCB24A"/>
+                </g>
+                <path class="gl__out" d="M12 30 L46 82 L46 112 L30 118 L30 124 L70 124 L70 118 L54 112 L54 82 L88 30 Z"/>
+              </svg>
+            </div>
+            <div class="dish__body">
+              <p class="dish__top"><span class="dish__n mono">06</span><span class="dish__name">Dr. Bali Hai</span><span class="dish__rule" aria-hidden="true"></span><span class="dish__p mono">3.400</span></p>
+              <p class="dish__note">Boozy, earthy, slightly fruity</p>
+              <ul class="dish__spec"><li data-ing="0"><i style="--c:#A97038" aria-hidden="true"></i>Bacardi Ocho</li><li data-ing="1"><i style="--c:#8C5B2E" aria-hidden="true"></i>Bacardi Quattro</li><li data-ing="2"><i style="--c:#4A2E1D" aria-hidden="true"></i>Coffee liqueur</li><li data-ing="3"><i style="--c:#DCB24A" aria-hidden="true"></i>Pineapple</li></ul>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <section class="course" aria-labelledby="course-sea">
+        <header class="course__head">
+          <h3 class="course__title" id="course-sea">Seasonal</h3>
+          <p class="course__price mono">3.400 kr.</p>
+        </header>
+        <ul class="course__list">
+          <li class="dish">
+            <div class="dish__glass" aria-hidden="true">
+              <svg viewBox="0 0 100 130" class="gl" data-fill>
+                <defs><clipPath id="cp-sea-0"><path d="M30 14 L33 118 Q33 124 39 124 L61 124 Q67 124 67 118 L70 14 Z"/></clipPath></defs>
+                <g clip-path="url(#cp-sea-0)">
+                  <rect class="gl__band" data-band="0" x="0" y="87.2" width="100" height="19.4" fill="#E4E0CC"/>
+                  <rect class="gl__band" data-band="1" x="0" y="68.4" width="100" height="19.4" fill="#E09A3E"/>
+                  <rect class="gl__band" data-band="2" x="0" y="49.6" width="100" height="19.4" fill="#E4A878"/>
+                  <rect class="gl__band" data-band="3" x="0" y="30.8" width="100" height="19.4" fill="#D8737A"/>
+                  <rect class="gl__band" data-band="4" x="0" y="12.0" width="100" height="19.4" fill="#B5445C"/>
+                </g>
+                <path class="gl__out" d="M30 14 L33 118 Q33 124 39 124 L61 124 Q67 124 67 118 L70 14 Z"/>
+              </svg>
+            </div>
+            <div class="dish__body">
+              <p class="dish__top"><span class="dish__n mono">01</span><span class="dish__name">Sex Panther</span><span class="dish__rule" aria-hidden="true"></span><span class="dish__p mono">3.400</span></p>
+              <p class="dish__note">Longdrink, fruity, balanced and fresh</p>
+              <ul class="dish__spec"><li data-ing="0"><i style="--c:#E4E0CC" aria-hidden="true"></i>Espólón Blanco Tequila</li><li data-ing="1"><i style="--c:#E09A3E" aria-hidden="true"></i>Orange</li><li data-ing="2"><i style="--c:#E4A878" aria-hidden="true"></i>Peach</li><li data-ing="3"><i style="--c:#D8737A" aria-hidden="true"></i>Strawberries</li><li data-ing="4"><i style="--c:#B5445C" aria-hidden="true"></i>Raspberries</li></ul>
+            </div>
+          </li>
+          <li class="dish">
+            <div class="dish__glass" aria-hidden="true">
+              <svg viewBox="0 0 100 130" class="gl" data-fill>
+                <defs><clipPath id="cp-sea-1"><path d="M30 14 L33 118 Q33 124 39 124 L61 124 Q67 124 67 118 L70 14 Z"/></clipPath></defs>
+                <g clip-path="url(#cp-sea-1)">
+                  <rect class="gl__band" data-band="0" x="0" y="82.5" width="100" height="24.1" fill="#EFE6D6"/>
+                  <rect class="gl__band" data-band="1" x="0" y="59.0" width="100" height="24.1" fill="#DCB24A"/>
+                  <rect class="gl__band" data-band="2" x="0" y="35.5" width="100" height="24.1" fill="#E8E0CE"/>
+                  <rect class="gl__band" data-band="3" x="0" y="12.0" width="100" height="24.1" fill="#D6C9A8"/>
+                </g>
+                <path class="gl__out" d="M30 14 L33 118 Q33 124 39 124 L61 124 Q67 124 67 118 L70 14 Z"/>
+              </svg>
+            </div>
+            <div class="dish__body">
+              <p class="dish__top"><span class="dish__n mono">02</span><span class="dish__name">Quinoa Colada</span><span class="dish__rule" aria-hidden="true"></span><span class="dish__p mono">3.400</span></p>
+              <p class="dish__note">A bubbly, refreshing take on a Piña Colada</p>
+              <ul class="dish__spec"><li data-ing="0"><i style="--c:#EFE6D6" aria-hidden="true"></i>Bacardi Carta Blanca</li><li data-ing="1"><i style="--c:#DCB24A" aria-hidden="true"></i>Pineapple</li><li data-ing="2"><i style="--c:#E8E0CE" aria-hidden="true"></i>Takamaka Koko</li><li data-ing="3"><i style="--c:#D6C9A8" aria-hidden="true"></i>Quinoa amazake</li></ul>
+            </div>
+          </li>
+          <li class="dish">
+            <div class="dish__glass" aria-hidden="true">
+              <svg viewBox="0 0 100 130" class="gl" data-fill>
+                <defs><clipPath id="cp-sea-2"><path d="M12 30 L46 82 L46 112 L30 118 L30 124 L70 124 L70 118 L54 112 L54 82 L88 30 Z"/></clipPath></defs>
+                <g clip-path="url(#cp-sea-2)">
+                  <rect class="gl__band" data-band="0" x="0" y="82.5" width="100" height="24.1" fill="#E2E4DE"/>
+                  <rect class="gl__band" data-band="1" x="0" y="59.0" width="100" height="24.1" fill="#4E3423"/>
+                  <rect class="gl__band" data-band="2" x="0" y="35.5" width="100" height="24.1" fill="#CBB68C"/>
+                  <rect class="gl__band" data-band="3" x="0" y="12.0" width="100" height="24.1" fill="#D9A32E"/>
+                </g>
+                <path class="gl__out" d="M12 30 L46 82 L46 112 L30 118 L30 124 L70 124 L70 118 L54 112 L54 82 L88 30 Z"/>
+              </svg>
+            </div>
+            <div class="dish__body">
+              <p class="dish__top"><span class="dish__n mono">03</span><span class="dish__name">Bean Me Up</span><span class="dish__rule" aria-hidden="true"></span><span class="dish__p mono">3.400</span></p>
+              <p class="dish__note">A silky smooth and weird espresso martini</p>
+              <ul class="dish__spec"><li data-ing="0"><i style="--c:#E2E4DE" aria-hidden="true"></i>Katla Vodka</li><li data-ing="1"><i style="--c:#4E3423" aria-hidden="true"></i>Coconut coldbrew</li><li data-ing="2"><i style="--c:#CBB68C" aria-hidden="true"></i>Sesame seeds</li><li data-ing="3"><i style="--c:#D9A32E" aria-hidden="true"></i>Passionfruit</li></ul>
+            </div>
+          </li>
+          <li class="dish">
+            <div class="dish__glass" aria-hidden="true">
+              <svg viewBox="0 0 100 130" class="gl" data-fill>
+                <defs><clipPath id="cp-sea-3"><path d="M14 34 Q14 78 46 84 L46 112 L30 118 L30 124 L70 124 L70 118 L54 112 L54 84 Q86 78 86 34 Z"/></clipPath></defs>
+                <g clip-path="url(#cp-sea-3)">
+                  <rect class="gl__band" data-band="0" x="0" y="82.5" width="100" height="24.1" fill="#A5703A"/>
+                  <rect class="gl__band" data-band="1" x="0" y="59.0" width="100" height="24.1" fill="#DFD05A"/>
+                  <rect class="gl__band" data-band="2" x="0" y="35.5" width="100" height="24.1" fill="#E0CE72"/>
+                  <rect class="gl__band" data-band="3" x="0" y="12.0" width="100" height="24.1" fill="#D6C489"/>
+                </g>
+                <path class="gl__out" d="M14 34 Q14 78 46 84 L46 112 L30 118 L30 124 L70 124 L70 118 L54 112 L54 84 Q86 78 86 34 Z"/>
+              </svg>
+            </div>
+            <div class="dish__body">
+              <p class="dish__top"><span class="dish__n mono">04</span><span class="dish__name">Bananarama</span><span class="dish__rule" aria-hidden="true"></span><span class="dish__p mono">3.400</span></p>
+              <p class="dish__note">Whiskey sour style-ish, fruity and fresh</p>
+              <ul class="dish__spec"><li data-ing="0"><i style="--c:#A5703A" aria-hidden="true"></i>Johnnie Walker Black Label</li><li data-ing="1"><i style="--c:#DFD05A" aria-hidden="true"></i>Lemon</li><li data-ing="2"><i style="--c:#E0CE72" aria-hidden="true"></i>Banana</li><li data-ing="3"><i style="--c:#D6C489" aria-hidden="true"></i>Fino sherry</li></ul>
+            </div>
+          </li>
+          <li class="dish">
+            <div class="dish__glass" aria-hidden="true">
+              <svg viewBox="0 0 100 130" class="gl" data-fill>
+                <defs><clipPath id="cp-sea-4"><path d="M14 34 Q14 78 46 84 L46 112 L30 118 L30 124 L70 124 L70 118 L54 112 L54 84 Q86 78 86 34 Z"/></clipPath></defs>
+                <g clip-path="url(#cp-sea-4)">
+                  <rect class="gl__band" data-band="0" x="0" y="87.2" width="100" height="19.4" fill="#C9CFA8"/>
+                  <rect class="gl__band" data-band="1" x="0" y="68.4" width="100" height="19.4" fill="#CFC9AE"/>
+                  <rect class="gl__band" data-band="2" x="0" y="49.6" width="100" height="19.4" fill="#A8323F"/>
+                  <rect class="gl__band" data-band="3" x="0" y="30.8" width="100" height="19.4" fill="#B5202B"/>
+                  <rect class="gl__band" data-band="4" x="0" y="12.0" width="100" height="19.4" fill="#DCCDB6"/>
+                </g>
+                <path class="gl__out" d="M14 34 Q14 78 46 84 L46 112 L30 118 L30 124 L70 124 L70 118 L54 112 L54 84 Q86 78 86 34 Z"/>
+              </svg>
+            </div>
+            <div class="dish__body">
+              <p class="dish__top"><span class="dish__n mono">05</span><span class="dish__name">Mon Cheri</span><span class="dish__rule" aria-hidden="true"></span><span class="dish__p mono">3.400</span></p>
+              <p class="dish__note">Fresh, fruity and a little bit smoky</p>
+              <ul class="dish__spec"><li data-ing="0"><i style="--c:#C9CFA8" aria-hidden="true"></i>Beefeater Gin</li><li data-ing="1"><i style="--c:#CFC9AE" aria-hidden="true"></i>Mezcal</li><li data-ing="2"><i style="--c:#A8323F" aria-hidden="true"></i>Cherry</li><li data-ing="3"><i style="--c:#B5202B" aria-hidden="true"></i>Campari</li><li data-ing="4"><i style="--c:#DCCDB6" aria-hidden="true"></i>Maraschino liqueur</li></ul>
+            </div>
+          </li>
+          <li class="dish">
+            <div class="dish__glass" aria-hidden="true">
+              <svg viewBox="0 0 100 130" class="gl" data-fill>
+                <defs><clipPath id="cp-sea-5"><path d="M12 30 L46 82 L46 112 L30 118 L30 124 L70 124 L70 118 L54 112 L54 82 L88 30 Z"/></clipPath></defs>
+                <g clip-path="url(#cp-sea-5)">
+                  <rect class="gl__band" data-band="0" x="0" y="82.5" width="100" height="24.1" fill="#C9CFA8"/>
+                  <rect class="gl__band" data-band="1" x="0" y="59.0" width="100" height="24.1" fill="#CF5560"/>
+                  <rect class="gl__band" data-band="2" x="0" y="35.5" width="100" height="24.1" fill="#E0D9AE"/>
+                  <rect class="gl__band" data-band="3" x="0" y="12.0" width="100" height="24.1" fill="#B57A38"/>
+                </g>
+                <path class="gl__out" d="M12 30 L46 82 L46 112 L30 118 L30 124 L70 124 L70 118 L54 112 L54 82 L88 30 Z"/>
+              </svg>
+            </div>
+            <div class="dish__body">
+              <p class="dish__top"><span class="dish__n mono">06</span><span class="dish__name">Head Hunter</span><span class="dish__rule" aria-hidden="true"></span><span class="dish__p mono">3.400</span></p>
+              <p class="dish__note">Spirit forward, slightly fruity and a lil bitter</p>
+              <ul class="dish__spec"><li data-ing="0"><i style="--c:#C9CFA8" aria-hidden="true"></i>Beefeater Gin</li><li data-ing="1"><i style="--c:#CF5560" aria-hidden="true"></i>Watermelon</li><li data-ing="2"><i style="--c:#E0D9AE" aria-hidden="true"></i>Bianco Bitter</li><li data-ing="3"><i style="--c:#B57A38" aria-hidden="true"></i>Disaronno</li></ul>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <section class="course" aria-labelledby="course-zero">
+        <header class="course__head">
+          <h3 class="course__title" id="course-zero">Zero percent</h3>
+          <p class="course__price mono">1.900 kr.</p>
+        </header>
+        <ul class="course__list">
+          <li class="dish">
+            <div class="dish__glass" aria-hidden="true">
+              <svg viewBox="0 0 100 130" class="gl" data-fill>
+                <defs><clipPath id="cp-zero-0"><path d="M30 14 L33 118 Q33 124 39 124 L61 124 Q67 124 67 118 L70 14 Z"/></clipPath></defs>
+                <g clip-path="url(#cp-zero-0)">
+                  <rect class="gl__band" data-band="0" x="0" y="82.5" width="100" height="24.1" fill="#C3D468"/>
+                  <rect class="gl__band" data-band="1" x="0" y="59.0" width="100" height="24.1" fill="#D9A94E"/>
+                  <rect class="gl__band" data-band="2" x="0" y="35.5" width="100" height="24.1" fill="#A8C23A"/>
+                  <rect class="gl__band" data-band="3" x="0" y="12.0" width="100" height="24.1" fill="#9A7A57"/>
+                </g>
+                <path class="gl__out" d="M30 14 L33 118 Q33 124 39 124 L61 124 Q67 124 67 118 L70 14 Z"/>
+              </svg>
+            </div>
+            <div class="dish__body">
+              <p class="dish__top"><span class="dish__n mono">01</span><span class="dish__name">Kjalarnes</span><span class="dish__rule" aria-hidden="true"></span><span class="dish__p mono">1.900</span></p>
+              <p class="dish__note">Fresh, gingery and stormy</p>
+              <ul class="dish__spec"><li data-ing="0"><i style="--c:#C3D468" aria-hidden="true"></i>Lemongrass</li><li data-ing="1"><i style="--c:#D9A94E" aria-hidden="true"></i>Ginger beer</li><li data-ing="2"><i style="--c:#A8C23A" aria-hidden="true"></i>Lime</li><li data-ing="3"><i style="--c:#9A7A57" aria-hidden="true"></i>Aromatic spices</li></ul>
+            </div>
+          </li>
+          <li class="dish">
+            <div class="dish__glass" aria-hidden="true">
+              <svg viewBox="0 0 100 130" class="gl" data-fill>
+                <defs><clipPath id="cp-zero-1"><path d="M18 30 L23 118 Q23 124 30 124 L70 124 Q77 124 77 118 L82 30 Z"/></clipPath></defs>
+                <g clip-path="url(#cp-zero-1)">
+                  <rect class="gl__band" data-band="0" x="0" y="59.0" width="100" height="47.6" fill="#D4808E"/>
+                  <rect class="gl__band" data-band="1" x="0" y="12.0" width="100" height="47.6" fill="#8E2A33"/>
+                </g>
+                <path class="gl__out" d="M18 30 L23 118 Q23 124 30 124 L70 124 Q77 124 77 118 L82 30 Z"/>
+              </svg>
+            </div>
+            <div class="dish__body">
+              <p class="dish__top"><span class="dish__n mono">02</span><span class="dish__name">Cherry Amor</span><span class="dish__rule" aria-hidden="true"></span><span class="dish__p mono">1.900</span></p>
+              <p class="dish__note">Refreshing, dry and bitter</p>
+              <ul class="dish__spec"><li data-ing="0"><i style="--c:#D4808E" aria-hidden="true"></i>Thomas Henry Cherry Blossom Tonic</li><li data-ing="1"><i style="--c:#8E2A33" aria-hidden="true"></i>Bitter concentrate</li></ul>
+            </div>
+          </li>
+          <li class="dish">
+            <div class="dish__glass" aria-hidden="true">
+              <svg viewBox="0 0 100 130" class="gl" data-fill>
+                <defs><clipPath id="cp-zero-2"><path d="M30 14 L33 118 Q33 124 39 124 L61 124 Q67 124 67 118 L70 14 Z"/></clipPath></defs>
+                <g clip-path="url(#cp-zero-2)">
+                  <rect class="gl__band" data-band="0" x="0" y="82.5" width="100" height="24.1" fill="#D8737A"/>
+                  <rect class="gl__band" data-band="1" x="0" y="59.0" width="100" height="24.1" fill="#B5445C"/>
+                  <rect class="gl__band" data-band="2" x="0" y="35.5" width="100" height="24.1" fill="#DFD05A"/>
+                  <rect class="gl__band" data-band="3" x="0" y="12.0" width="100" height="24.1" fill="#DCC489"/>
+                </g>
+                <path class="gl__out" d="M30 14 L33 118 Q33 124 39 124 L61 124 Q67 124 67 118 L70 14 Z"/>
+              </svg>
+            </div>
+            <div class="dish__body">
+              <p class="dish__top"><span class="dish__n mono">03</span><span class="dish__name">Like a Virgin</span><span class="dish__rule" aria-hidden="true"></span><span class="dish__p mono">1.900</span></p>
+              <p class="dish__note">Long drink, berries, refreshing</p>
+              <ul class="dish__spec"><li data-ing="0"><i style="--c:#D8737A" aria-hidden="true"></i>Strawberries</li><li data-ing="1"><i style="--c:#B5445C" aria-hidden="true"></i>Raspberries</li><li data-ing="2"><i style="--c:#DFD05A" aria-hidden="true"></i>Lemon</li><li data-ing="3"><i style="--c:#DCC489" aria-hidden="true"></i>Ginger ale</li></ul>
+            </div>
+          </li>
+          <li class="dish">
+            <div class="dish__glass" aria-hidden="true">
+              <svg viewBox="0 0 100 130" class="gl" data-fill>
+                <defs><clipPath id="cp-zero-3"><path d="M30 14 L33 118 Q33 124 39 124 L61 124 Q67 124 67 118 L70 14 Z"/></clipPath></defs>
+                <g clip-path="url(#cp-zero-3)">
+                  <rect class="gl__band" data-band="0" x="0" y="74.7" width="100" height="31.9" fill="#DCB24A"/>
+                  <rect class="gl__band" data-band="1" x="0" y="43.3" width="100" height="31.9" fill="#D6C9A8"/>
+                  <rect class="gl__band" data-band="2" x="0" y="12.0" width="100" height="31.9" fill="#E8E4D8"/>
+                </g>
+                <path class="gl__out" d="M30 14 L33 118 Q33 124 39 124 L61 124 Q67 124 67 118 L70 14 Z"/>
+              </svg>
+            </div>
+            <div class="dish__body">
+              <p class="dish__top"><span class="dish__n mono">04</span><span class="dish__name">Spirited Away</span><span class="dish__rule" aria-hidden="true"></span><span class="dish__p mono">1.900</span></p>
+              <p class="dish__note">Long drink, fruity, refreshing</p>
+              <ul class="dish__spec"><li data-ing="0"><i style="--c:#DCB24A" aria-hidden="true"></i>Pineapple</li><li data-ing="1"><i style="--c:#D6C9A8" aria-hidden="true"></i>Quinoa amazake</li><li data-ing="2"><i style="--c:#E8E4D8" aria-hidden="true"></i>Sparkling coconut</li></ul>
+            </div>
+          </li>
+        </ul>
+      </section>
+  </div>
+
+  <p class="disclaim mono">GLASSWARE FOLLOWS THE ICONS ON JUNGLE&rsquo;S OWN MENU. BAND COLOURS ARE ILLUSTRATIVE. PRICES AS PUBLISHED, SO CONFIRM AT THE BAR.</p>
+</section>
+
+<!-- ══════════ 5. the crew — horizontal rail ══════════ -->
+<section class="crew" id="crew">
+  <div class="crew__pin" id="crewPin">
+    <header class="crew__head">
+      <p class="kicker mono">03 / THE PEOPLE UPSTAIRS</p>
+      <h2 class="h2" data-nosplit>Mixed by<br /><em>this lot</em></h2>
+      <p class="crew__note">Exactly as they introduce themselves on jungle.is. Scroll to meet everyone.</p>
+    </header>
+
+    <ul class="crew__track" id="crewTrack">
+      <li class="crew__card">
+        <img src="assets/img/crew-jonas.webp" alt="Jónas behind the bar at Jungle." width="900" height="1125" loading="lazy" decoding="async" />
+        <div class="crew__body"><h3>Jónas</h3><p class="mono crew__tag">WORLD CLASS BARTENDER OF ICELAND 2017</p><p>&bdquo;The guy in the fish shirt&ldquo;, one of Iceland&rsquo;s finest bartenders. You better have fun when he&rsquo;s your waiter because he specifically requests it.</p></div>
+      </li>
+      <li class="crew__card">
+        <img src="assets/img/crew-vikingur.webp" alt="Víkingur, bartender at Jungle." width="900" height="1116" loading="lazy" decoding="async" />
+        <div class="crew__body"><h3>Víkingur</h3><p class="mono crew__tag">BACARDI LEGACY ICELAND 2019</p><p>Second place in World Class Bartender of the year 2019 after only two years behind a bar, and reached the global finals by knocking out Finland.</p></div>
+      </li>
+      <li class="crew__card">
+        <img src="assets/img/crew-jakob.webp" alt="Jakob, bartender at Jungle." width="900" height="1125" loading="lazy" decoding="async" />
+        <div class="crew__body"><h3>Jakob</h3><p class="mono crew__tag">BROUGHT YOU COCOBUTT &amp; STAIRWAY</p><p>Bartender and social media manager, in charge of showing you their mistakes so you don&rsquo;t have to make them yourself. Also a legend on the grill.</p></div>
+      </li>
+      <li class="crew__card">
+        <img src="assets/img/crew-svala.webp" alt="Svala, part of the Jungle crew." width="900" height="1260" loading="lazy" decoding="async" />
+        <div class="crew__body"><h3>Svala</h3><p class="mono crew__tag">THE LIFE OF THE PARTY</p><p>She likes white wine. Nay, she loooves white wine. Probably their weirdest staff member, which is exactly why they love her. No bad vibes, homie.</p></div>
+      </li>
+      <li class="crew__card">
+        <img src="assets/img/crew-shaun.webp" alt="Shaun, part of the Jungle crew." width="900" height="1266" loading="lazy" decoding="async" />
+        <div class="crew__body"><h3>Shaun</h3><p class="mono crew__tag">GARNISH &middot; KOMBUCHA &middot; EVERYTHING</p><p>A gardening, bartending, flower growing, kombucha brewing hero. Leaking sink? WHERE IS SHAUN? New garnish needed? SHAAAUN!?</p></div>
+      </li>
+      <li class="crew__card">
+        <img src="assets/img/crew-olafur.webp" alt="Ólafur DJing at Jungle." width="900" height="1125" loading="lazy" decoding="async" />
+        <div class="crew__body"><h3>Ólafur</h3><p class="mono crew__tag">DJ ÓLI JUNGLE BOY</p><p>Get a guy who can do both. Catch him on weekends trying to bartend and DJ at the same time, making sure they don&rsquo;t only play techno from 2007.</p></div>
+      </li>
+      <li class="crew__card">
+        <img src="assets/img/crew-michal.webp" alt="Michał, bartender at Jungle." width="900" height="1125" loading="lazy" decoding="async" />
+        <div class="crew__body"><h3>Michał</h3><p class="mono crew__tag">MEME LORD</p><p>Probably the nicest person on the planet. If you don&rsquo;t love him at first, you will love him eventually. Loves a good Jungle Bird. The cocktail. Not birds.</p></div>
+      </li>
+      <li class="crew__card">
+        <img src="assets/img/crew-oliver.webp" alt="Oliver, bartender at Jungle." width="900" height="1125" loading="lazy" decoding="async" />
+        <div class="crew__body"><h3>Oliver</h3><p class="mono crew__tag">THE SLOVAKIAN STALLION</p><p>MMA, football, weights, cocktail shaking, whatever, he does it. Loves his whisky, negronis and techno. Terrible at karaoke, but don&rsquo;t tell him that.</p></div>
+      </li>
+    </ul>
+
+    <p class="crew__progress mono" aria-hidden="true"><span id="crewCount">01</span> / 08</p>
+  </div>
+</section>
+
+<!-- ══════════ 6. archive + cursor drinks ══════════ -->
+<section class="archive" id="archive">
+  <div class="archive__trail" id="trail" aria-hidden="true"></div>
+
+  <header class="sec-head sec-head--mid">
+    <p class="kicker mono">04 / THE ARCHIVE</p>
+    <h2 class="h2">Drinks that have<br />passed through</h2>
+    <p class="sec-head__note">Every one of these was on the Jungle list at some point and is not on it now. That turnover is the whole point of the place. Move your cursor and they follow you around.</p>
+  </header>
+
+  <ul class="archive__grid" id="archiveGrid"></ul>
+</section>
+
+<!-- ══════════ 7. the room ══════════ -->
+<section class="room" id="room">
+  <header class="sec-head">
+    <p class="kicker mono">05 / THE ROOM</p>
+    <h2 class="h2">Green, low and<br />a floor above the street</h2>
+  </header>
+
+  <div class="room__mosaic">
+    <figure class="room__cell room__cell--wide" data-pour>
+      <img src="assets/img/booths.webp" alt="Velvet booths at Jungle divided by tall planting, lit by low lamps." width="1900" height="760" loading="lazy" decoding="async" />
+      <figcaption class="mono">BOOTHS</figcaption>
+    </figure>
+    <figure class="room__cell" data-pour>
+      <img src="assets/img/chairs.webp" alt="Bentwood chairs and small tables in the seating area at Jungle." width="1500" height="1500" loading="lazy" decoding="async" />
+      <figcaption class="mono">THE FLOOR</figcaption>
+    </figure>
+    <figure class="room__cell" data-pour>
+      <img src="assets/img/bartools.webp" alt="Bar tools laid out at Jungle: shakers, strainers and a mixing glass." width="1400" height="1400" loading="lazy" decoding="async" />
+      <figcaption class="mono">THE KIT</figcaption>
+    </figure>
+    <figure class="room__cell room__cell--wide" data-pour>
+      <img src="assets/img/banner.webp" alt="The greenery-lined room at Jungle seen from the far end of the bar." width="1400" height="560" loading="lazy" decoding="async" />
+      <figcaption class="mono">LOOKING BACK</figcaption>
+    </figure>
+  </div>
+
+  <div class="room__note">
+    <p class="lead">Laid back through the week, louder at the weekend, when the crew take turns DJing and pouring at the same time. Walk in, mostly. No reservations for small groups.</p>
+  </div>
+</section>
+
+<!-- ══════════ 8. workshop ══════════ -->
+<section class="workshop paper" id="workshop">
+  <div class="workshop__media">
+    <figure data-pour>
+      <img src="assets/img/workshop1.webp" alt="A cocktail workshop in progress at Jungle, glasses and bottles set out along the bar." width="1500" height="1000" loading="lazy" decoding="async" />
+    </figure>
+    <figure data-pour>
+      <img src="assets/img/workshop2.webp" alt="Guests shaking their own drinks during a Jungle cocktail workshop." width="1300" height="1300" loading="lazy" decoding="async" />
+    </figure>
+  </div>
+
+  <div class="workshop__text">
+    <p class="kicker mono">06 / KOKTEILANÁMSKEIÐ</p>
+    <h2 class="h2">Learn to make<br />them yourself</h2>
+    <p class="lead">A two hour cocktail workshop at the bar, run by the people who write the list. Their own description, in their own words:</p>
+    <ol class="steps">
+      <li><span class="steps__n mono">01</span><p>Þið veljið 3 kokteila af seðlinum. Ef það eru einhverjir aðrir drykkir sem ykkur langar að prufa, ekki hika við að nefna það við okkur.</p></li>
+      <li><span class="steps__n mono">02</span><p>Byrjum á léttum fordrykk og svo förum við yfir handtökin og lærum að hrista upp þessa geggjuðu kokteila.</p></li>
+      <li><span class="steps__n mono">03</span><p>Geggjuð stemning og allir gera sína eigin drykki. Svo fáið þið allar uppskriftirnar sendar í pósti eftir námskeiðið.</p></li>
+    </ol>
+    <p class="workshop__meta mono">RUNS ABOUT 2 HOURS &middot; BOOK AT JUNGLE@JUNGLE.IS</p>
+    <a class="btn btn--main" href="mailto:jungle@jungle.is?subject=Kokteilan%C3%A1mskei%C3%B0%20%C3%AD%20Jungle">Ask about a workshop</a>
+  </div>
+</section>
+
+<!-- ══════════ 9. rent ══════════ -->
+<section class="rent" id="rent">
+  <div class="rent__inner">
+    <p class="kicker mono">07 / TAKE THE WHOLE PLACE</p>
+    <h2 class="h2">Have it to<br />yourselves</h2>
+    <div class="rent__cols">
+      <p class="lead">Meetings and seminars, small work gatherings, or a full hundred and fifty person party. They have hosted all of it and are open to hearing an idea.</p>
+      <ul class="rent__nums">
+        <li><strong>90</strong><span>seated</span></li>
+        <li><strong>120&ndash;150</strong><span>standing</span></li>
+      </ul>
+    </div>
+    <p class="rent__alt">Looking for something smaller? The same crew run <a href="https://www.bingobar.is" target="_blank" rel="noopener">Bingó Drinkery</a> on Skólavörðustígur and <a href="https://www.daisybar.is" target="_blank" rel="noopener">Daisy</a> on Ingólfsstræti.</p>
+    <a class="btn btn--main" href="mailto:jungle@jungle.is?subject=Private%20event%20at%20Jungle">Send a date and a headcount</a>
+  </div>
+</section>
+
+<!-- ══════════ 10. visit ══════════ -->
+<section class="visit" id="visit">
+  <header class="sec-head">
+    <p class="kicker mono">08 / VISIT</p>
+    <h2 class="h2">Open every day<br />from four</h2>
+  </header>
+
+  <div class="visit__grid">
+    <div class="card card--hours">
+      <h3 class="card__h mono">OPENING HOURS</h3>
+      <ul class="hours" id="hoursList"></ul>
+    </div>
+
+    <div class="card card--hh">
+      <h3 class="card__h mono">HAPPY HOUR &middot; 16:00 TO 19:00, EVERY DAY</h3>
+      <ul class="hh">
+        <li><span>Cocktails from the list</span><b>2.400 kr.</b></li>
+        <li><span>Beer on draft</span><b>1.200 / 1.300 kr.</b></li>
+        <li><span>Wine and prosecco</span><b>1.200 / 1.400 kr.</b></li>
+        <li><span>Champagne by the glass</span><b>2.200 kr.</b></li>
+        <li><span>Zero percent cocktails</span><b>1.400 kr.</b></li>
+        <li><span>Alcohol free beer</span><b>1.000 kr.</b></li>
+      </ul>
+    </div>
+
+    <div class="card card--find">
+      <h3 class="card__h mono">FINDING IT</h3>
+      <p class="find__addr">Austurstræti 9<br /><span>Second floor</span><br />101 Reykjavík</p>
+      <p class="find__body">Walk in, mostly. For bigger groups, send an email. They tend not to pick up the phone or answer email after four in the afternoon, because by then they are behind the bar.</p>
+      <div class="find__acts">
+        <a class="btn btn--main" href="https://www.google.com/maps/search/?api=1&amp;query=Jungle%20Cocktail%20Bar%2C%20Austurstr%C3%A6ti%209%2C%20Reykjav%C3%ADk" target="_blank" rel="noopener">Open in Maps</a>
+        <a class="btn btn--ghost" href="mailto:jungle@jungle.is">jungle@jungle.is</a>
+      </div>
+    </div>
+
+    <figure class="visit__shot" data-pour>
+      <img src="assets/img/team.webp" alt="The Jungle crew behind the bar." width="1300" height="1300" loading="lazy" decoding="async" />
+      <figcaption class="mono">THE CREW</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ══════════ 11. closer ══════════ -->
+<section class="closer">
+  <p class="closer__pre mono">AUSTURSTRÆTI 9 &middot; SECOND FLOOR</p>
+  <img class="closer__logo" src="assets/img/logo-white.webp" alt="Jungle" width="1600" height="427" loading="lazy" decoding="async" />
+  <p class="closer__big">Welcome to the jungle</p>
+  <a class="btn btn--main btn--lg" href="mailto:jungle@jungle.is">jungle@jungle.is</a>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="foot__cols">
+    <div>
+      <img class="foot__logo" src="assets/img/logo-white.webp" alt="Jungle" width="1600" height="427" loading="lazy" decoding="async" />
+      <p class="mono">COCKTAIL BAR &middot; REYKJAVÍK</p>
+    </div>
+    <nav class="foot__nav" aria-label="Footer">
+      <a href="#drinks">Drinks</a>
+      <a href="#archive">Archive</a>
+      <a href="#workshop">Workshop</a>
+      <a href="#rent">Rent the space</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <div class="foot__side">
+      <a href="https://www.instagram.com/jungle.rvk/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/jungle.rvk" target="_blank" rel="noopener">Facebook</a>
+      <a href="mailto:jungle@jungle.is">jungle@jungle.is</a>
+    </div>
+  </div>
+  <p class="foot__note">
+    Design concept only, not an official Jungle Cocktail Bar website. Photographs, drink names, opening hours and prices are the bar&rsquo;s own, taken from jungle.is. The stirring drink in the hero is a generated film made for this concept. Prices were current when this was built and change often.
+  </p>
+</footer>
+
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/vendor/lenis.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
