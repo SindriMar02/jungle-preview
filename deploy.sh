@@ -19,6 +19,11 @@ cp -R "$REPO/assets" .
 cp "$REPO/index.html" "$REPO/styles.css" "$REPO/app.js" "$REPO/robots.txt" .
 touch .nojekyll
 
+# GATE 1 — check the STAGED tree, byte-for-byte what gets published. A preview that
+# ships without a usable favicon shows the ARTIX helm from the origin root in the
+# client's tab. Rules and history: _tools/favicon-guard.mjs
+node "$REPO"/../_tools/favicon-guard.mjs "$WT"
+
 git add -A
 git -c user.email=sindri@klubbr.is -c user.name="Sindri Már" \
     commit -q -m "Deploy $(git -C "$REPO" rev-parse --short HEAD) (noindex preview)"
@@ -26,3 +31,7 @@ git push -q -f origin gh-pages
 cd "$REPO"
 git worktree remove --force "$WT"
 echo "published:"; git -C "$REPO" ls-tree --name-only origin/gh-pages
+
+# GATE 2 — on-disk correct is not proof the client sees an icon: the build can rename
+# files and the Pages CDN takes a minute. Check the DEPLOYED url. Polls ~3 min.
+node "$REPO"/../_tools/favicon-verify-live.mjs "https://sindrimar02.github.io/jungle-preview/"
