@@ -1,0 +1,8 @@
+node_modules/
+.DS_Store
+
+# Internal only. Never publish: contains the outreach draft and the
+# audit findings deliberately held back from the client.
+OUTREACH.md
+.claude-launch-note.txt
+.claude/
