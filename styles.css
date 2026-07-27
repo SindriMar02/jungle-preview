@@ -581,29 +581,42 @@ body.gate-on{overflow:hidden}
 
 /* ═══════════ 5. THE CREW — pinned horizontal rail ══════ */
 .crew{background:var(--deep);border-block:1px solid var(--line);overflow:hidden}
+/* While pinned, this block IS the viewport — height, not just min-height. The card
+   used to size itself from its image's aspect-ratio, so the stack could total more
+   than the screen (1135px inside 900px at 1440x900) and .crew's overflow:hidden
+   sliced the arches off the top. Everything below distributes within this height
+   instead, so a card is always whole before the rail starts moving sideways. */
 .crew__pin{
-  min-height:100svh;display:flex;flex-direction:column;justify-content:center;
-  gap:clamp(24px,4vw,48px);padding:clamp(70px,10vh,110px) 0 clamp(40px,6vh,70px);
+  min-height:100svh;height:100svh;
+  display:flex;flex-direction:column;justify-content:center;
+  gap:clamp(14px,1.6vw,26px);padding:clamp(64px,8vh,88px) 0 clamp(24px,3.5vh,44px);
 }
-.crew__head{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad);width:100%}
-.crew__head .h2{margin-bottom:14px}
+.crew__head{flex:0 0 auto;max-width:var(--maxw);margin:0 auto;padding:0 var(--pad);width:100%}
+/* The page's display size (80px here) eats 163px of a 900px viewport on its own.
+   Trimmed for this section only, so the height it frees goes to the portraits. */
+.crew__head .h2{font-size:clamp(2rem,4vw,3.25rem);margin-bottom:14px}
 .crew__note{color:var(--dim);max-width:46ch;font-size:.95rem}
 .crew__track{
+  flex:1 1 auto;min-height:0;align-items:stretch;
   display:flex;gap:clamp(14px,1.8vw,26px);
   padding-inline:var(--pad);width:max-content;will-change:transform;
 }
 .crew__card{
-  flex:0 0 auto;width:clamp(240px,25vw,340px);
+  flex:0 0 auto;width:clamp(240px,25vw,340px);height:100%;
   background:var(--moss);border:1px solid var(--line);
   border-radius:200px 200px 14px 14px;overflow:hidden;
   display:flex;flex-direction:column;
 }
+/* The portrait takes whatever the name and bio leave, rather than dictating the
+   card's height from a fixed 4/5 ratio. min-height:0 is what lets it shrink inside
+   the flex column; object-fit keeps the crop honest at any resulting shape. */
 .crew__card img{
-  width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 22%;
+  flex:1 1 0;min-height:0;
+  width:100%;height:auto;aspect-ratio:auto;object-fit:cover;object-position:50% 22%;
   filter:saturate(.82) contrast(1.04);transition:filter .6s var(--e);
 }
 .crew__card:hover img{filter:saturate(1) contrast(1)}
-.crew__body{padding:clamp(16px,1.8vw,24px);display:grid;gap:8px}
+.crew__body{flex:0 0 auto;padding:clamp(16px,1.8vw,24px);display:grid;gap:8px}
 .crew__body h3{
   font-family:Technor,sans-serif;font-weight:900;text-transform:uppercase;
   font-size:clamp(1.15rem,1.7vw,1.5rem);line-height:1;
@@ -791,13 +804,23 @@ body.gate-on{overflow:hidden}
   .foot__cols{grid-template-columns:1fr 1fr}
 }
 @media (max-width:1080px){
-  .crew__pin{min-height:0;padding-block:var(--gap)}
+  /* No pin down here — the rail is a native swipe scroller, so hand the intrinsic
+     sizing back: the block grows with its content and the portrait returns to 4/5. */
+  .crew__pin{min-height:0;height:auto;padding-block:var(--gap)}
   .crew__track{
-    width:auto;overflow-x:auto;scroll-snap-type:x mandatory;
+    flex:0 0 auto;width:auto;overflow-x:auto;scroll-snap-type:x mandatory;
     -webkit-overflow-scrolling:touch;padding-bottom:8px;
   }
-  .crew__card{scroll-snap-align:center;width:min(74vw,300px)}
+  .crew__card{scroll-snap-align:center;width:min(74vw,300px);height:auto}
+  .crew__card img{flex:0 0 auto;aspect-ratio:4/5;height:auto}
   .crew__progress{display:none}
+}
+/* Short laptops: once the viewport is under ~860px there is not enough room for a
+   display heading, a standfirst AND a portrait. The heading gives way first so the
+   people stay the biggest thing on screen. */
+@media (min-width:1081px) and (max-height:860px){
+  .crew__head .h2{font-size:clamp(1.75rem,3vw,2.4rem)}
+  .crew__note{display:none}
 }
 @media (max-width:720px){
   .hero__line{white-space:normal;font-size:clamp(1.75rem,9.6vw,2.9rem);line-height:1.02}
