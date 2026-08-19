@@ -193,14 +193,11 @@ const HOURS = [
     </li>`).join('');
 })();
 
-/* ═══════════ HEADER STATE ═══════════════════════════════ */
-(() => {
-  const hdr = $('#hdr');
-  if (!hdr) return;
-  const upd = () => hdr.classList.toggle('is-stuck', (scrollY || pageYOffset) > 40);
-  addEventListener('scroll', upd, { passive: true });
-  upd();
-})();
+/* ═══════════ HEADER STATE ═══════════════════════════════
+   Deliberately empty. The bar is constant: fixed glass from first paint,
+   never hides, never reveals, never resizes. See the mobile chrome standard
+   (Reynir 42ff65e) — every bar in this workspace that moved on scroll failed
+   on a real device. No scroll listener here on purpose. */
 
 /* ═══════════ MOBILE MENU ════════════════════════════════ */
 (() => {
